@@ -56,6 +56,9 @@ while (true)
         Console.WriteLine("---------------------------------");
         Console.WriteLine("------ Jogo de Adivinhação ------");
         Console.WriteLine("---------------------------------");
+        Console.WriteLine("---------------------------------");
+        Console.WriteLine("---- Pontuação inicial: 1000 ----");
+        Console.WriteLine("---------------------------------");
         Console.WriteLine($"------ Tentativa {tentativaAtual} de {tentativasMaximas}. --------");
         Console.WriteLine("---------------------------------");
         Console.WriteLine("------- Digite um número: -------");
