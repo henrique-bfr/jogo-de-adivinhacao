@@ -45,6 +45,9 @@ while (true)
             continue;
     }
 
+    int[] numerosDigitados = new int[tentativasMaximas];
+    int contadorNumeroDigitados = 0;
+
     for (int tentativaAtual = 1; tentativaAtual <= tentativasMaximas; tentativaAtual++)
     {
         Console.Clear();
@@ -53,7 +56,46 @@ while (true)
         Console.WriteLine("---------------------------------");
         Console.WriteLine($"------ Tentativa {tentativaAtual} de {tentativasMaximas}. --------");
         Console.WriteLine("---------------------------------");
+        Console.WriteLine("------- Digite um número: -------");
         int numeroDigitado = Convert.ToInt32(Console.ReadLine());
+
+        bool numeroEstaRepetido = false;
+
+        for (int indiceAtual = 0; indiceAtual < numerosDigitados.Length; indiceAtual++)
+        {
+            if (numerosDigitados[indiceAtual] == numeroDigitado)
+            {
+                numeroEstaRepetido = true;
+                break;
+            }
+        }
+
+        if (numeroEstaRepetido == true)
+        {
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("O burro tu já digitou esse número, digita outro.");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("--------- Digite ENTER para continuar ----------");
+            Console.ReadLine();
+            tentativaAtual--;
+
+            continue;
+        }
+
+        if (contadorNumeroDigitados < numerosDigitados.Length)
+        {
+            numerosDigitados[contadorNumeroDigitados] = numeroDigitado;
+            contadorNumeroDigitados++;
+        }
+
+        else
+        {
+            numerosDigitados = new int[tentativasMaximas];
+            contadorNumeroDigitados++;
+
+            numerosDigitados[contadorNumeroDigitados] = numeroDigitado;
+            contadorNumeroDigitados++;
+        }
 
         if (numeroDigitado == numeroAleatorio)
         {
