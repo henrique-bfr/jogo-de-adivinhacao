@@ -45,6 +45,8 @@ while (true)
             continue;
     }
 
+    int pontuacao = 1000;
+
     int[] numerosDigitados = new int[tentativasMaximas];
     int contadorNumeroDigitados = 0;
 
@@ -119,6 +121,38 @@ while (true)
             Console.WriteLine("Ooo jegue, o número que tu digitou é MENOR que o número secreto.");
             Console.WriteLine("----------------------------------------------------------------");
         }
+        Console.WriteLine("-- Digite ENTER para continuar --");
+        Console.ReadLine();
+
+        if (tentativaAtual == tentativasMaximas)
+        {
+            Console.Clear();
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine("Perdeu marreco kkkkk tenta de novo na proxima.");
+            Console.WriteLine("----------------------------------------------");
+        }
+
+        int diferencaNumerica = Math.Abs(numeroAleatorio - numeroDigitado);
+
+        if (diferencaNumerica >= 10)
+        {
+            pontuacao -= 100;
+        }
+
+        else if (diferencaNumerica >= 5)
+        {
+            pontuacao -= 50;
+        }
+
+        else
+        {
+            pontuacao -= 20;
+        }
+
+        Console.WriteLine("---------------------");
+        Console.WriteLine("Sua pontuação é: " + pontuacao);
+        Console.WriteLine("---------------------");
+
         Console.WriteLine("-- Digite ENTER para continuar --");
         Console.ReadLine();
     }
