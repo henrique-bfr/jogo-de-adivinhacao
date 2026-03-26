@@ -8,8 +8,29 @@ Console.WriteLine();
 Console.WriteLine("Digite um número: ");
 string strnumeroDigitado = Console.ReadLine();
 
-int nuemroAleatorio = RandomNumberGenerator.GetInt32(1, 21);
+int numeroDigitado = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("O número aleatório foi: " + nuemroAleatorio);
+int numeroAleatorio = RandomNumberGenerator.GetInt32(1, 21);
+
+if (numeroDigitado == numeroAleatorio)
+{
+    Console.WriteLine("---------------------------");
+    Console.WriteLine("Boa mula acertou na cagada!");
+    Console.WriteLine("---------------------------");
+}
+
+else if (numeroDigitado > numeroAleatorio)
+{
+    Console.WriteLine("-------------------------------------------------------------");
+    Console.WriteLine("Errou animal. O número digitado é MAIOR que o número secreto.");
+    Console.WriteLine("-------------------------------------------------------------");
+}
+
+else
+{
+    Console.WriteLine("----------------------------------------------------------------");
+    Console.WriteLine("Ooo jegue, o número que tu digitou é MENOR que o número secreto.");
+    Console.WriteLine("----------------------------------------------------------------");
+}
 
 Console.ReadLine();
